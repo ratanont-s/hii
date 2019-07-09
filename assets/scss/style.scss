@@ -1,0 +1,14 @@
+@import "./font";
+@import "./variable";
+@import "./bootstrap/bootstrap.scss";
+
+@import "./footer";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}

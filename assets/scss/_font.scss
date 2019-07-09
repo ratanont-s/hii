@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "DB Heavent";
+  src: url("../fonts/DB_Heavent_Bd.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "DB Heavent";
+  src: url("../fonts/DB_Heavent_Med.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "DB Heavent";
+  src: url("../fonts/DB_Heavent_Reg.ttf");
+  font-weight: 400;
+}
+
+@mixin font-db-($weight) {
+  font-family: "DB Heavent";
+  font-weight: $weight;
+}
