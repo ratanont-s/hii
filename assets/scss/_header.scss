@@ -17,7 +17,8 @@
           padding: 0 1rem;
 
           &-control {
-            background-color: transparent;
+            background: transparent url("../images/icons/icon-search.svg") no-repeat right 1rem center;
+            background-size: auto 80%;
           }
         }
       }
@@ -30,7 +31,7 @@
   }
 
   .navbar {
-    > .container {
+    >.container {
       align-items: flex-start;
     }
 
@@ -41,10 +42,12 @@
         }
       }
     }
+
     &-toggler {
       border-color: #b7b7b7;
       color: #b1b1b1;
     }
+
     .nav {
       &-link {
         color: white;
@@ -80,9 +83,10 @@
     }
 
     .navbar {
-      > .container {
+      >.container {
         align-items: center;
       }
+
       &-brand {
         .logo {
           display: none;
@@ -92,6 +96,7 @@
           }
         }
       }
+
       .nav {
         &-link {
           color: $body-color;

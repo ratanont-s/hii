@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   // Header
   $("header").sticky({
     topSpacing: 0
@@ -17,26 +17,22 @@ $(function() {
   });
   // Sec 2 slide
   $("#sec2 .slick").slick({
-    // autoplay: true,
-    // autoplaySpeed: 10000,
+    autoplay: true,
+    autoplaySpeed: 10000,
     speed: 1000,
     pauseOnHover: false,
     slidesToShow: 3,
     centerMode: true,
     centerPadding: "0px",
-    prevArrow:
-      "<a href='#'><img src='../assets/images/icons/prev-arrow.png' /></a>",
-    nextArrow:
-      "<a href='#'><img src='../assets/images/icons/next-arrow.png' /></a>",
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 1,
-          arrows: false
-        }
+    prevArrow: "<a href='#'><img src='../assets/images/icons/prev-arrow.png' /></a>",
+    nextArrow: "<a href='#'><img src='../assets/images/icons/next-arrow.png' /></a>",
+    responsive: [{
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 1,
+        arrows: false
       }
-    ]
+    }]
   });
   // Sec 4 slide
   $("#sec4 .slick").slick({
@@ -46,14 +42,13 @@ $(function() {
     autoplaySpeed: 10000,
     speed: 1000,
     pauseOnHover: false,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          dots: false
-        }
+    appendDots: $("#sec4 #slickDots"),
+    responsive: [{
+      breakpoint: 992,
+      settings: {
+        dots: false
       }
-    ]
+    }]
   });
   //   Sec 7 slide
   $("#sec7 .slick").slick({
@@ -65,14 +60,12 @@ $(function() {
     autoplay: true,
     autoplaySpeed: 10000,
     pauseOnHover: false,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
+    responsive: [{
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
       }
-    ]
+    }]
   });
 });
