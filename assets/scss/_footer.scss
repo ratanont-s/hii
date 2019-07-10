@@ -1,12 +1,12 @@
 .footer {
-  background: $footer-bg url("../images/footer-bg.png") no-repeat right 15%
-    bottom;
+  background: $footer-bg url("../images/bg-footer.png") no-repeat right 15% bottom -30px;
   background-size: auto;
   margin-top: auto;
   position: relative;
   padding-top: 26px;
   color: white;
   @include font-db-(400);
+
   &::before {
     content: "";
     position: absolute;
@@ -14,15 +14,15 @@
     left: 0;
     width: 100%;
     height: 26px;
-    @include gradient-x(
-      $start-color: $secondary,
+    @include gradient-x($start-color: $secondary,
       $end-color: $primary,
       $start-percent: 0%,
-      $end-percent: 100%
-    );
+      $end-percent: 100%);
   }
+
   &-contact {
     border-bottom: 1px solid $footer-color;
+
     .nav {
       &-item {
         flex: 1 1 auto;
@@ -31,43 +31,106 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         &:not(:last-child) {
           border-right: 1px solid $footer-color;
         }
+
         a {
           color: white;
         }
       }
     }
+
     .list-social {
       list-style: none;
       padding-left: 0;
       margin-bottom: 0;
       display: inline-block;
+
       &-item {
         display: inline-block;
       }
-    }
-  }
-  &-link {
-    padding: 1.25rem 0;
-    .list-link {
-      list-style: none;
-      padding-left: 0;
-      > h4 {
-        font-weight: 400;
-      }
-      li {
-        a {
-          color: $footer-color;
+
+      &-link {
+        width: 42px;
+        height: 42px;
+        border-radius: 10rem;
+        border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          font-size: 1.26rem;
         }
       }
     }
   }
+
+  &-link {
+    padding: 1.25rem 0;
+
+    .list-link {
+      list-style: none;
+      padding-left: 0;
+
+      >h4 {
+        font-weight: 400;
+      }
+
+      li {
+        a {
+          color: $footer-color;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
   &-copyright {
     text-align: center;
     padding: 0.5rem 0;
     background-color: $copyright-bg;
     color: $copyright-color;
+  }
+
+  // Mobile
+  @include media-breakpoint-down(md) {
+    background: unset;
+    background-color: $footer-bg;
+
+    .footer {
+      &-contact {
+        >.container {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .nav {
+          &-item {
+
+            &:not(:first-child) {
+              border-right-width: 0;
+            }
+
+            &:not(:last-child) {
+              border-bottom: 1px solid $footer-color;
+            }
+
+            &:last-child {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      &-link {
+        display: none;
+      }
+    }
   }
 }

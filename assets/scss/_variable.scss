@@ -13,3 +13,9 @@ $enable-responsive-font-sizes: true;
 
 // Links
 $link-hover-decoration: none;
+
+// Slick
+$slick-font-path: "../scss/slick/fonts/";
+$slick-loader-path: "../scss/slick/";
+$slick-dot-size: 1rem;
+$slick-dot-color-active: $primary;

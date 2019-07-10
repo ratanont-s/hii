@@ -1,13 +1,23 @@
 @import "./font";
 @import "./variable";
 @import "./bootstrap/bootstrap.scss";
+@import "./slick/slick.scss";
 
+@import "./header";
 @import "./footer";
+@import "./landing";
 
 html,
 body {
   height: 100%;
+
+  // Mobile
+  @include media-breakpoint-down(md) {
+    min-height: 100%;
+    height: unset;
+  }
 }
+
 body {
   display: flex;
   flex-direction: column;

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/leaflet.css">
     <link rel="stylesheet" href="./assets/css/style.min.css">
 
     <title>สถาบันสารสนเทศทรัพยากรน้ำ (สสน.)</title>
@@ -15,49 +16,365 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src="./assets/images/logo.png" alt="สถาบันสารสนเทศทรัพยากรน้ำ (สสน.)">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
+        <div class="header-top">
+            <div class="container">
+                <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            จัดซื้อจัดจ้าง
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-question-circle"></i>
+                            ถาม-ตอบ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-briefcase"></i>
+                            ร่วมงานกับเรา
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-headset"></i>
+                            ติดต่อหน่วยงาน
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="#" class="form">
+                            <input type="text" class="form-control form-control-sm">
+                        </form>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/images/logo.png" alt="สถาบันสารสนเทศทรัพยากรน้ำ (สสน.)" class="logo">
+                    <img src="./assets/images/logo-small.png" alt="สถาบันสารสนเทศทรัพยากรน้ำ (สสน.)" class="logo-small">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">หน้าแรก</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ข้อมูลหน่วยงาน
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ข่าวประชาสัมพันธ์</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">งานวิจัยและพัฒนา</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                สื่อเผยแพร่
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
     <!-- Main -->
     <main class="main">
-        <h1>Hello, world!</h1>
+        <!-- Sec 1 -->
+        <section id="sec1">
+            <div class="container">
+                <div class="slide">
+                    <div class="slide-item">
+                        <img src="./assets/images/slide-01.png" alt="">
+                    </div>
+                    <div class="slide-item">
+                        <img src="./assets/images/slide-02.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sec 2 -->
+        <section id="sec2">
+            <div class="container">
+                <div class="title">
+                    <h1>
+                        <small>ข่าว</small>
+                        ประชาสัมพันธ์
+                    </h1>
+                </div>
+                <div class="slide">
+                    <div>
+                        <a href="#" class="card">
+                            <img src="https://via.placeholder.com/270x170" alt="" class="card-img">
+                            <div class="card-body">
+                                <h6 class="card-text">
+                                    ดร.สุทัศน์ เยือนกรุงปักกิ่ง ร่วมเป็นวิทยากรในงาน SiDRR
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" class="card">
+                            <img src="https://via.placeholder.com/270x170" alt="" class="card-img">
+                            <div class="card-body">
+                                <h6 class="card-text">
+                                    นายกฯ เปิดงาน “สร้างรู้ สื่อสาร การบริหารจัดการ ทรัพยากรน้ำฤดูฝนปี 62” ชม Mobile War
+                                    Room หน่วยวิเคราะห์และติดตามสถานการณ์น้ำเคลื่อนที่ สสน. (คลิป)
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" class="card">
+                            <img src="https://via.placeholder.com/270x170" alt="" class="card-img">
+                            <div class="card-body">
+                                <h6 class="card-text">
+                                    ดร.สุทัศน์ เยือนกรุงปักกิ่ง ร่วมเป็นวิทยากรในงาน SiDRR
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" class="card">
+                            <img src="https://via.placeholder.com/270x170" alt="" class="card-img">
+                            <div class="card-body">
+                                <h6 class="card-text">
+                                    นายกฯ เปิดงาน “สร้างรู้ สื่อสาร การบริหารจัดการ ทรัพยากรน้ำฤดูฝนปี 62” ชม Mobile War
+                                    Room หน่วยวิเคราะห์และติดตามสถานการณ์น้ำเคลื่อนที่ สสน. (คลิป)
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="see-all">
+                    <a href="#" class="btn btn-outline-dark">ดูทั้งหมด</a>
+                </div>
+            </div>
+        </section>
+        <!-- Sec 3 -->
+        <section id="sec3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 order-last order-lg-first">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item"
+                                src="https://www.youtube.com/embed/0KgXz7hXTzI"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-first order-lg-last">
+                        <div class="title">
+                            <h1>
+                                <small>แนะนำ</small>
+                                <span>สถาบันสารสนเทศทรัพยากรน้ำ</span>
+                            </h1>
+                        </div>
+                        <p>
+                            สถาบันสารสนเทศทรัพยากรน้ำ เป็นผู้รับผิดชอบดำเนินการวิจัยและพัฒนาเทคโนโลยี
+                            รวบรวมและวิเคราะห์ข้อมูลสารสนเทศทรัพยากรน้ำและการเกษตร เพื่อให้หน่วยงานต่างๆ
+                            นำไปใช้ประโยชน์ในการเพิ่มประสิทธิภาพการบริหารจัดการน้ำและการเกษตร
+                            จากผลการดำเนินงานที่ผ่านมากว่า 10 ปี พระบาทสมเด็จพระปรมินทรมหาภูมิพลอดุลยเดช
+                            ทรงพระกรุณาโปรดเกล้าฯ ให้จัดตั้ง <b>สถาบันสารสนเทศทรัพยากรน้ำและการเกษตร ขึ้น
+                                เป็นองค์การมหาชน
+                                สังกัดกระทรวงวิทยาศาสตร์และเทคโนโลยี..</b> <a href="#">อ่านเพิ่มเติม</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sec 4 -->
+        <section id="sec4">
+            <div class="container">
+                <div class="slick">
+                    <div class="slick-item">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="title">
+                                    <h1>
+                                        <small>งานวิจัยและพัฒนา</small>
+                                        คลังข้อมูลน้ำและภูมิอากาศแห่งชาติ
+                                    </h1>
+                                </div>
+                                <p>
+                                    Mobile Application รายงานสถานการณ์น้ำและสภาพอากาศ
+                                    ของประเทศไทย จาก “คลังข้อมูลน้ำและภูมิอากาศแห่งชาติ” สำหรับติดตามข้อมูลฝน ระดับน้ำ
+                                    สถานการณ์เขื่อน คลื่นลม
+                                    และพายุ มีทั้งข้อมูลสถานการณ์ปัจจุบัน และข้อมูลคาดการณ์
+                                    ล่วงหน้า
+                                </p>
+                                <a href="#" class="btn btn-primary d-none d-lg-inline-block">อ่านเพิ่มเติม</a>
+                            </div>
+                            <div class="col-lg-6">
+                                <p>
+                                    <img src="./assets/images/safari.png" alt="" class="img-fluid">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="text-center d-lg-none">
+                            <a href="#" class="btn btn-primary">อ่านเพิ่มเติม</a>
+                        </div>
+                    </div>
+                    <div class="slick-item">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="title">
+                                    <h1>
+                                        <small>งานวิจัยและพัฒนา</small>
+                                        คลังข้อมูลน้ำและภูมิอากาศแห่งชาติ
+                                    </h1>
+                                </div>
+                                <p>
+                                    Mobile Application รายงานสถานการณ์น้ำและสภาพอากาศ
+                                    ของประเทศไทย จาก “คลังข้อมูลน้ำและภูมิอากาศแห่งชาติ” สำหรับติดตามข้อมูลฝน ระดับน้ำ
+                                    สถานการณ์เขื่อน คลื่นลม
+                                    และพายุ มีทั้งข้อมูลสถานการณ์ปัจจุบัน และข้อมูลคาดการณ์
+                                    ล่วงหน้า
+                                </p>
+                                <a href="#" class="btn btn-primary d-none d-lg-inline-block">อ่านเพิ่มเติม</a>
+                            </div>
+                            <div class="col-lg-6">
+                                <p>
+                                    <img src="./assets/images/safari.png" alt="" class="img-fluid">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="text-center d-lg-none">
+                            <a href="#" class="btn btn-primary">อ่านเพิ่มเติม</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sec 5 -->
+        <section id="sec5">
+            <div id="map" style="height: 400px;"></div>
+        </section>
+        <!-- Sec 6 -->
+        <section id="sec6">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-5 order-last order-lg-first">
+                        <div class="video">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item"
+                                    src="https://www.youtube.com/embed/uCazMdIntB8"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 order-first order-lg-last">
+                        <div class="title">
+                            <h5>หน่วยวิเคราะห์และติดตามสถานการณ์น้ำเคลื่อนที่</h5>
+                            <h1>Mobile War Room</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-end">
+                    <div class="col-lg-auto order-last order-lg-first">
+                        <div class="info">
+                            <h4>เชื่อมโยงข้อมูล</h4>
+                            <h1>37 <small>หน่วยงาน</small></h1>
+                        </div>
+                    </div>
+                    <div class="col-lg order-first order-lg-last">
+                        <p class="text-center text-lg-right">
+                            <img src="./assets/images/car.png" alt="" class="img-fluid">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sec 7 -->
+        <section id="sec7">
+            <div class="container">
+                <div class="slick">
+                    <a href="#" class="slick-item">
+                        <img src="./assets/images/law.png" alt="Law">
+                    </a>
+                    <a href="#" class="slick-item">
+                        <img src="./assets/images/management.png" alt="Law">
+                    </a>
+                    <a href="#" class="slick-item">
+                        <img src="./assets/images/villager.png" alt="Law">
+                    </a>
+                    <a href="#" class="slick-item">
+                        <img src="./assets/images/pants.png" alt="Law">
+                    </a>
+                    <a href="#" class="slick-item">
+                        <img src="./assets/images/law.png" alt="Law">
+                    </a>
+                    <a href="#" class="slick-item">
+                        <img src="./assets/images/management.png" alt="Law">
+                    </a>
+                    <a href="#" class="slick-item">
+                        <img src="./assets/images/villager.png" alt="Law">
+                    </a>
+                    <a href="#" class="slick-item">
+                        <img src="./assets/images/pants.png" alt="Law">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Sec 8 -->
+        <section id="sec8">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 d-none d-lg-block">
+                        <img src="./assets/images/mac.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="app">
+                            <div class="app-name">
+                                <span>
+                                    <img src="./assets/images/tw-app.png" alt="THAIWATER">
+                                </span>
+                                <h1>“ThaiWater”</h1>
+                            </div>
+                            <h2>Support All Devices <br>
+                                Any where, Anytime</h2>
+                            <p class="d-lg-none">
+                                <img src="./assets/images/mac.png" alt="" class="img-fluid">
+                            </p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#">
+                                        <img src="./assets/images/i-os.png" alt="iOS" class="img-fluid">
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#">
+                                        <img src="./assets/images/android.png" alt="Android" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- Footer -->
     <footer class="footer">
@@ -77,7 +394,7 @@
                         <a href="mailto:contact@hii.or.th">contact@hii.or.th</a>
                     </li>
                     <li class="nav-item">
-                        พบกับเราได้ที่
+                        <span class="d-none d-lg-inline-block">พบกับเราได้ที่</span>
                         <ul class="list-social ml-3">
                             <li class="list-social-item">
                                 <a href="#" class="list-social-link"><i class="fab fa-facebook-square"></i></a>
@@ -96,88 +413,133 @@
         <div class="footer-link">
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-6 col-sm-4 col-lg">
                         <ul class="list-link">
                             <h4>ข้อมูลหน่วยงาน</h4>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">ความเป็นมา</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">วิสัยทัศน์ พันธกิจ</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">โครงสร้างองค์กร</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">นโยบายและยุทธศาสตร์</a>
+                            </li>
+                            <li>
+                                <a href="#">ผลการดำเนินงาน</a>
+                            </li>
+                            <li>
+                                <a href="#">กฎหมาย ระเบียบ ข้อบังคับ</a>
+                            </li>
+                            <li>
+                                <a href="#">การกำกับดูแลกิจการที่ดี</a>
+                            </li>
+                            <li>
+                                <a href="#">โครงการลงทุนที่สำคัญ</a>
+                            </li>
+                            <li>
+                                <a href="#">วัฒนธรรมองค์กร</a>
+                            </li>
+                            <li>
+                                <a href="#">ความร่วมมือระหว่างประเทศ</a>
+                            </li>
+                            <li>
+                                <a href="#">เครื่องหมาย สสน.</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col">
+                    <div class="col-6 col-sm-4 col-lg">
                         <ul class="list-link">
-                            <h4>ข้อมูลหน่วยงาน</h4>
+                            <h4>ข่าวประชาสัมพันธ์</h4>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">ข่าว สสน.</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">กิจกรรมองค์กร</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">กิจกรรมเพื่อสังคม</a>
+                            </li>
+                        </ul>
+                        <ul class="list-link">
+                            <h4>สื่อเผยแพร่</h4>
+                            <li>
+                                <a href="#">รายงานประจำปี</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">สิ่งพิมพ์</a>
+                            </li>
+                            <li>
+                                <a href="#">มัลติมีเดีย</a>
+                            </li>
+                            <li>
+                                <a href="#">อินโฟกราฟฟิก</a>
+                            </li>
+                            <li>
+                                <a href="#">บทความวิชาการ</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col">
+                    <div class="col-6 col-sm-4 col-lg">
                         <ul class="list-link">
-                            <h4>ข้อมูลหน่วยงาน</h4>
+                            <h4>งานวิจัยและพัฒนา</h4>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">จัดซื้อจัดจ้าง</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">ถาม-ตอบ</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">ร่วมงานกับเรา</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">ติดต่อหน่วยงาน</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col">
+                    <div class="col-6 col-sm-4 col-lg">
                         <ul class="list-link">
-                            <h4>ข้อมูลหน่วยงาน</h4>
+                            <h4>เว็บไซต์ผลงาน</h4>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">คลังข้อมูลน้ำและภูมิอากาศแห่งชาติ</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">การจัดการทรัพยากรน้ำชุนชน</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">ฐานความรู้ใหม่จากปราชญ์ชาวบ้าน</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">ฐานข้อมูลพรรณไม้ชุนชน</a>
+                            </li>
+                            <li>
+                                <a href="#">กฏหมายด้านบริหารจัดการน้ำ</a>
+                            </li>
+                            <li>
+                                <a href="#">มูลนิธิอุทกพัฒน์ ในพระบรมราชูปถัมภ์</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col">
+                    <div class="col-6 col-sm-4 col-lg">
                         <ul class="list-link">
-                            <h4>ข้อมูลหน่วยงาน</h4>
+                            <h4>เว็บไซต์ที่เกี่ยวข้อง</h4>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">ผลงานรัฐบาล</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">ศูนย์บริการข้อมูลภาครัฐ</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">จดหมายข่าวรัฐบาล เพื่อประชาชน</a>
                             </li>
                             <li>
-                                <a href="#">text</a>
+                                <a href="#">ฐานข้อมูลหน่วยงานภาครัฐ G INFO</a>
+                            </li>
+                            <li>
+                                <a href="#">ศูนย์กลางบริการภาครัฐสำหรับประชาชน</a>
                             </li>
                         </ul>
                     </div>
@@ -194,16 +556,31 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <!-- Sticky -->
+    <script src="./assets/js/jquery.sticky.js"></script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/990479688a.js"></script>
+    <!-- Slick -->
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- Leaflet -->
+    <script src="./assets/js/leaflet.js"></script>
+    <!-- Script -->
+    <script src="./assets/js/script.js"></script>
+    <script>
+        //   Map
+        var map = L.map("map", {
+            center: [13.756047, 100.5330784],
+            zoom: 16
+        });
+    </script>
 </body>
 
 </html>
