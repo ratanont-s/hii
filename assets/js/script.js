@@ -8,7 +8,7 @@ $(function() {
     $("header").addClass("sticky-top");
   }
   // Sec 1 slide
-  $("#sec1 .slide").slick({
+  $("#sec1 .slick").slick({
     arrows: false,
     autoplay: true,
     autoplaySpeed: 10000,
@@ -16,19 +16,24 @@ $(function() {
     pauseOnHover: false
   });
   // Sec 2 slide
-  $("#sec2 .slide").slick({
-    autoplay: true,
-    autoplaySpeed: 10000,
+  $("#sec2 .slick").slick({
+    // autoplay: true,
+    // autoplaySpeed: 10000,
     speed: 1000,
     pauseOnHover: false,
     slidesToShow: 3,
     centerMode: true,
     centerPadding: "0px",
+    prevArrow:
+      "<a href='#'><img src='../assets/images/icons/prev-arrow.png' /></a>",
+    nextArrow:
+      "<a href='#'><img src='../assets/images/icons/next-arrow.png' /></a>",
     responsive: [
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 1
+          slidesToShow: 1,
+          arrows: false
         }
       }
     ]

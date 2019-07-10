@@ -1,122 +1,131 @@
 .header {
+  @include font-db-(400);
 
-    @include font-db-(400);
+  &-top {
+    border-bottom: 1px solid white;
 
-    &-top {
-        border-bottom: 1px solid white;
+    .nav {
+      justify-content: flex-end;
+      align-items: center;
 
-        .nav {
-            justify-content: flex-end;
-            align-items: center;
-
-            &-item {
-                &:not(:last-child) {
-                    border-right: 1px solid white;
-                }
-
-                .form {
-                    padding: 0 1rem;
-
-                    &-control {
-                        background-color: transparent;
-                    }
-                }
-            }
-
-            &-link {
-                color: white;
-                padding: .75rem 1rem;
-            }
+      &-item {
+        &:not(:last-child) {
+          border-right: 1px solid white;
         }
+
+        .form {
+          padding: 0 1rem;
+
+          &-control {
+            background-color: transparent;
+          }
+        }
+      }
+
+      &-link {
+        color: white;
+        padding: 0.75rem 1rem;
+      }
+    }
+  }
+
+  .navbar {
+    > .container {
+      align-items: flex-start;
+    }
+
+    &-brand {
+      .logo {
+        &-small {
+          display: none;
+        }
+      }
+    }
+    &-toggler {
+      border-color: #b7b7b7;
+      color: #b1b1b1;
+    }
+    .nav {
+      &-link {
+        color: white;
+        @include rfs(26);
+
+        &.dropdown-toggle {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  // Desktop
+  @include media-breakpoint-up(lg) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $zindex-fixed !important;
+  }
+
+  // Mobile
+  @include media-breakpoint-down(md) {
+    background-color: white;
+    box-shadow: $box-shadow-sm;
+    z-index: $zindex-sticky;
+
+    .header {
+      &-top {
+        display: none;
+      }
     }
 
     .navbar {
-        >.container {
-            align-items: flex-start;
-        }
+      > .container {
+        align-items: center;
+      }
+      &-brand {
+        .logo {
+          display: none;
 
-        &-brand {
-            .logo {
-                &-small {
-                    display: none;
-                }
-            }
+          &-small {
+            display: inline-block;
+          }
         }
-
-        .nav {
-            &-link {
-                color: white;
-                @include rfs(26);
-
-                &.dropdown-toggle {
-                    display: flex;
-                    align-items: center;
-                }
-            }
+      }
+      .nav {
+        &-link {
+          color: $body-color;
         }
+      }
     }
-
-    // Desktop
-    @include media-breakpoint-up(lg) {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: $zindex-fixed !important;
-
-    }
-
-    // Mobile
-    @include media-breakpoint-down(md) {
-        background-color: white;
-        box-shadow: $box-shadow-sm;
-
-        .header {
-            &-top {
-                display: none;
-            }
-        }
-
-        .navbar {
-
-            &-brand {
-                .logo {
-                    display: none;
-
-                    &-small {
-                        display: inline-block;
-                    }
-                }
-            }
-        }
-    }
+  }
 }
 
 .is-sticky {
-    .header {
-        background-color: white;
-        box-shadow: $box-shadow;
+  .header {
+    background-color: white;
+    box-shadow: $box-shadow;
 
-        &-top {
-            display: none;
-        }
-
-        .navbar {
-            &-brand {
-                .logo {
-                    display: none;
-
-                    &-small {
-                        display: block;
-                    }
-                }
-            }
-
-            .nav {
-                &-link {
-                    color: $body-color;
-                }
-            }
-        }
+    &-top {
+      display: none;
     }
+
+    .navbar {
+      &-brand {
+        .logo {
+          display: none;
+
+          &-small {
+            display: block;
+          }
+        }
+      }
+
+      .nav {
+        &-link {
+          color: $body-color;
+        }
+      }
+    }
+  }
 }
