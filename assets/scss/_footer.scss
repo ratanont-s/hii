@@ -1,28 +1,55 @@
 .footer {
-  background: $footer-bg url("../images/bg-footer.png") no-repeat right 15% bottom -30px;
+  background: $footer-bg url("../images/bg-footer.png") no-repeat right 15%
+    bottom -30px;
   background-size: auto;
   margin-top: auto;
-  position: relative;
-  padding-top: 26px;
   color: white;
   @include font-db-(400);
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 26px;
-    @include gradient-x($start-color: $secondary,
-      $end-color: $primary,
-      $start-percent: 0%,
-      $end-percent: 100%);
+  &-app {
+    background: white url("../images/dot-bg.png") no-repeat center bottom;
+    background-size: 100% auto;
+    padding: 2.5rem 0;
+    text-align: center;
+    .app {
+      &-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 18px;
+        h1 {
+          color: $body-color;
+          margin-left: 1rem;
+          margin-bottom: 0;
+          text-transform: uppercase;
+          @include rfs(38);
+        }
+      }
+      h2 {
+        color: $body-color;
+        @include rfs(36);
+        margin-bottom: 18px;
+      }
+    }
   }
-
   &-contact {
+    position: relative;
     border-bottom: 1px solid $footer-color;
-
+    padding-top: 26px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 26px;
+      @include gradient-x(
+        $start-color: $secondary,
+        $end-color: $primary,
+        $start-percent: 0%,
+        $end-percent: 100%
+      );
+    }
     .nav {
       &-item {
         flex: 1 1 auto;
@@ -75,7 +102,7 @@
       list-style: none;
       padding-left: 0;
 
-      >h4 {
+      > h4 {
         font-weight: 400;
       }
 
@@ -104,15 +131,17 @@
     background-color: $footer-bg;
 
     .footer {
+      &-app {
+        background-size: auto 35vh;
+      }
       &-contact {
-        >.container {
+        > .container {
           padding-left: 0;
           padding-right: 0;
         }
 
         .nav {
           &-item {
-
             &:not(:first-child) {
               border-right-width: 0;
             }

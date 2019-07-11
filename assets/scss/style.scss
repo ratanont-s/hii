@@ -7,11 +7,11 @@
 @import "./footer";
 @import "./landing";
 @import "./offcanvas";
+@import "./pages";
 
 html,
 body {
-  height: 100%;
-
+  min-height: 100%;
   // Mobile
   @include media-breakpoint-down(md) {
     min-height: 100%;
@@ -22,4 +22,10 @@ body {
 body {
   display: flex;
   flex-direction: column;
+}
+main {
+  // Mobile
+  @include media-breakpoint-down(md) {
+    overflow: hidden;
+  }
 }

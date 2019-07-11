@@ -1,4 +1,4 @@
-.header {
+.header-landing {
   @include font-db-(400);
 
   &-top {
@@ -17,8 +17,12 @@
           padding: 0 1rem;
 
           &-control {
-            background: transparent url("../images/icons/icon-search.svg") no-repeat right 1rem center;
-            background-size: auto 80%;
+            background-color: transparent;
+            border-color: $light;
+            border-right: 0;
+          }
+          .btn-outline-light {
+            border-left: 0;
           }
         }
       }
@@ -31,7 +35,7 @@
   }
 
   .navbar {
-    >.container {
+    > .container {
       align-items: flex-start;
     }
 
@@ -50,12 +54,31 @@
 
     .nav {
       &-link {
+        line-height: 1;
         color: white;
         @include rfs(26);
 
         &.dropdown-toggle {
           display: flex;
           align-items: center;
+        }
+      }
+    }
+
+    .dropdown {
+      &-menu {
+        border-radius: 0;
+        border-width: 0;
+        box-shadow: $box-shadow-sm;
+        background-clip: border-box;
+      }
+      &-item {
+        padding: 0.25rem 1rem;
+        line-height: 1;
+        color: $text-muted;
+        @include hover {
+          color: $body-color;
+          background-color: transparent;
         }
       }
     }
@@ -76,14 +99,14 @@
     box-shadow: $box-shadow-sm;
     z-index: $zindex-sticky;
 
-    .header {
+    .header-landing {
       &-top {
         display: none;
       }
     }
 
     .navbar {
-      >.container {
+      > .container {
         align-items: center;
       }
 
@@ -107,7 +130,7 @@
 }
 
 .is-sticky {
-  .header {
+  .header-landing {
     background-color: white;
     box-shadow: $box-shadow;
 
@@ -116,6 +139,9 @@
     }
 
     .navbar {
+      > .container {
+        align-items: center;
+      }
       &-brand {
         .logo {
           display: none;
@@ -129,6 +155,11 @@
       .nav {
         &-link {
           color: $body-color;
+        }
+        &-item {
+          &:not(:nth-last-child(2)) {
+            border-right: 1px solid $border-color;
+          }
         }
       }
     }

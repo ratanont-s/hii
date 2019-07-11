@@ -1,0 +1,73 @@
+#reseachDeverlopment {
+  #sec2 {
+    .sec {
+      &-item {
+        position: relative;
+        background-color: $light;
+        &-green {
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-color: $secondary;
+          }
+          .col-left {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+          }
+        }
+        &-blue {
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: $primary;
+          }
+          .col-right {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+          }
+        }
+      }
+    }
+    h1 {
+      @include rfs(54);
+    }
+    p {
+      @include rfs(28);
+    }
+
+    // Mobile
+    @include media-breakpoint-down(md) {
+      .sec-item {
+        text-align: center;
+        &-green::before,
+        &-blue::before {
+          display: none;
+        }
+        &-green {
+          .col-right {
+            padding: 0;
+          }
+        }
+        &-blue {
+          .col-left {
+            padding: 0;
+          }
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

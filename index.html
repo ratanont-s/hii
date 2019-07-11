@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./assets/css/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <link rel="stylesheet" href="./assets/css/style.min.css">
 
     <title>สถาบันสารสนเทศทรัพยากรน้ำ (สสน.)</title>
@@ -15,8 +15,8 @@
 
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="header-top">
+    <header class="header-landing" id="headerLanding">
+        <div class="header-landing-top">
             <div class="container">
                 <ul class="nav">
                     <li class="nav-item">
@@ -45,7 +45,13 @@
                     </li>
                     <li class="nav-item">
                         <form action="#" class="form">
-                            <input type="text" class="form-control form-control-sm">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-light" type="button"><i
+                                            class="fas fa-search"></i></button>
+                                </div>
+                            </div>
                         </form>
                     </li>
                 </ul>
@@ -75,10 +81,17 @@
                                 ข้อมูลหน่วยงาน
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#">ความเป็นมา</a>
+                                <a class="dropdown-item" href="#">วิสัยทัศน์ พันธกิจ</a>
+                                <a class="dropdown-item" href="#">โครงสร้างองค์กร</a>
+                                <a class="dropdown-item" href="#">นโยบายและยุทธศาสตร์</a>
+                                <a class="dropdown-item" href="#">ผลการดำเนินงาน</a>
+                                <a class="dropdown-item" href="#">กฎหมาย ระเบียบ ข้อบังคับ</a>
+                                <a class="dropdown-item" href="#">การกำกับดูแลกิจการที่ดี</a>
+                                <a class="dropdown-item" href="#">โครงการลงทุนที่สำคัญ</a>
+                                <a class="dropdown-item" href="#">วัฒนธรรมองค์กร</a>
+                                <a class="dropdown-item" href="#">ความร่วมมือระหว่างประเทศ</a>
+                                <a class="dropdown-item" href="#">เครื่องหมาย สสน.</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -100,8 +113,14 @@
                             </div>
                         </li>
                         <li class="nav-item d-lg-none">
-                            <form action="#" class="form p-3">
-                                <input type="text" class="form-control">
+                            <form action="#" class="form">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-light" type="button"><i
+                                                class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
                             </form>
                         </li>
                     </ul>
@@ -110,33 +129,38 @@
         </nav>
     </header>
     <!-- Main -->
-    <main class="main">
+    <main class="main" id="landingPage">
         <!-- Sec 1 -->
         <section id="sec1">
-            <div class="container">
-                <div class="weather">
-                    <div class="weather-inner">
-                        <div class="weather-current">
-                            <span class="weather-icon">
-                                <img src="./assets/images/icons/sun.svg" alt="">
-                            </span>
-                            <span class="weather-number">28</span>
+            <div class="sec-bg">
+                <img src="./assets/images/bg-sec-1.jpg" alt="">
+            </div>
+            <div class="sec-overlay">
+                <div class="container">
+                    <div class="weather">
+                        <div class="weather-inner">
+                            <div class="weather-current">
+                                <span class="weather-icon">
+                                    <img src="./assets/images/icons/sun.svg" alt="">
+                                </span>
+                                <span class="weather-number">28</span>
+                            </div>
+                            <div class="weather-city">กรุงเทพมหานคร</div>
+                            <ul class="weather-maxmin">
+                                <li class="weather-maxmin-item">35<i class="fas fa-caret-up"></i></li>
+                                <li>|</li>
+                                <li class="weather-maxmin-item">26<i class="fas fa-caret-up"></i></li>
+                            </ul>
+                            <div class="weather-time">เวลา 11.30 น.</div>
                         </div>
-                        <div class="weather-city">กรุงเทพมหานคร</div>
-                        <ul class="weather-maxmin">
-                            <li class="weather-maxmin-item">35<i class="fas fa-caret-up"></i></li>
-                            <li>|</li>
-                            <li class="weather-maxmin-item">26<i class="fas fa-caret-up"></i></li>
-                        </ul>
-                        <div class="weather-time">เวลา 11.30 น.</div>
                     </div>
-                </div>
-                <div class="slick">
-                    <div class="slick-item">
-                        <img src="./assets/images/slide-01.png" alt="">
-                    </div>
-                    <div class="slick-item">
-                        <img src="./assets/images/slide-02.png" alt="">
+                    <div class="slick">
+                        <div class="slick-item">
+                            <img src="./assets/images/slide-01.png" alt="">
+                        </div>
+                        <div class="slick-item">
+                            <img src="./assets/images/slide-02.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -193,12 +217,15 @@
                     </div>
                 </div>
                 <div class="see-all">
-                    <a href="#" class="btn btn-outline-dark">ดูทั้งหมด</a>
+                    <a href="#" class="btn btn-outline-dark px-4">ดูทั้งหมด</a>
                 </div>
             </div>
         </section>
         <!-- Sec 3 -->
         <section id="sec3">
+            <div class="sec-bg">
+                <img src="./assets/images/cercle.png">
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 order-last order-lg-first">
@@ -247,13 +274,13 @@
                                     และพายุ มีทั้งข้อมูลสถานการณ์ปัจจุบัน และข้อมูลคาดการณ์
                                     ล่วงหน้า
                                 </p>
-                                <a href="#" class="btn btn-primary d-none d-lg-inline-block">อ่านเพิ่มเติม</a>
+                                <a href="#" class="btn btn-primary d-none d-lg-inline-block px-4">อ่านเพิ่มเติม</a>
                             </div>
                             <div class="col-lg-6 col-right" style="background-image: url('./assets/images/safari.png')">
                             </div>
                         </div>
                         <div class="text-center d-lg-none">
-                            <a href="#" class="btn btn-primary">อ่านเพิ่มเติม</a>
+                            <a href="#" class="btn btn-primary px-4">อ่านเพิ่มเติม</a>
                         </div>
                     </div>
                     <div class="slick-item">
@@ -272,13 +299,13 @@
                                     และพายุ มีทั้งข้อมูลสถานการณ์ปัจจุบัน และข้อมูลคาดการณ์
                                     ล่วงหน้า
                                 </p>
-                                <a href="#" class="btn btn-primary d-none d-lg-inline-block">อ่านเพิ่มเติม</a>
+                                <a href="#" class="btn btn-primary d-none d-lg-inline-block px-4">อ่านเพิ่มเติม</a>
                             </div>
                             <div class="col-lg-6 col-right" style="background-image: url('./assets/images/safari.png')">
                             </div>
                         </div>
                         <div class="text-center d-lg-none">
-                            <a href="#" class="btn btn-primary">อ่านเพิ่มเติม</a>
+                            <a href="#" class="btn btn-primary px-4">อ่านเพิ่มเติม</a>
                         </div>
                     </div>
                 </div>
@@ -289,7 +316,18 @@
         </section>
         <!-- Sec 5 -->
         <section id="sec5">
-            <div id="map" style="height: 400px;"></div>
+            <div id="map" class="map">
+                <div class="map-overlay">
+                    <div class="card">
+                        <h3 class="card-header">ความร่วมมือระหว่างประเทศ</h3>
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action">The United Nations</a>
+                            <a href="#" class="list-group-item list-group-item-action">European Union</a>
+                            <a href="#" class="list-group-item list-group-item-action">Asean</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- Sec 6 -->
         <section id="sec6">
@@ -330,34 +368,36 @@
             <div class="container">
                 <div class="slick">
                     <a href="#" class="slick-item">
-                        <img src="./assets/images/law.png" alt="Law">
+                        <img src="./assets/images/partners/law-col.png" alt="">
                     </a>
                     <a href="#" class="slick-item">
-                        <img src="./assets/images/management.png" alt="Law">
+                        <img src="./assets/images/partners/management-col.png" alt="">
                     </a>
                     <a href="#" class="slick-item">
-                        <img src="./assets/images/villager.png" alt="Law">
+                        <img src="./assets/images/partners/knowleage-base-col.png" alt="">
                     </a>
                     <a href="#" class="slick-item">
-                        <img src="./assets/images/pants.png" alt="Law">
+                        <img src="./assets/images/partners/community-base-col.png" alt="">
                     </a>
                     <a href="#" class="slick-item">
-                        <img src="./assets/images/law.png" alt="Law">
+                        <img src="./assets/images/partners/law-col.png" alt="">
                     </a>
                     <a href="#" class="slick-item">
-                        <img src="./assets/images/management.png" alt="Law">
+                        <img src="./assets/images/partners/management-col.png" alt="">
                     </a>
                     <a href="#" class="slick-item">
-                        <img src="./assets/images/villager.png" alt="Law">
+                        <img src="./assets/images/partners/knowleage-base-col.png" alt="">
                     </a>
                     <a href="#" class="slick-item">
-                        <img src="./assets/images/pants.png" alt="Law">
+                        <img src="./assets/images/partners/community-base-col.png" alt="">
                     </a>
                 </div>
             </div>
         </section>
-        <!-- Sec 8 -->
-        <section id="sec8">
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-app">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 d-none d-lg-block">
@@ -392,10 +432,7 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-    <!-- Footer -->
-    <footer class="footer">
+        </div>
         <div class="footer-contact">
             <div class="container">
                 <ul class="nav">
@@ -575,13 +612,13 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        </script>
     <!-- Offcanvas -->
     <script src="./assets/js/offcanvas.js"></script>
     <!-- Sticky -->
@@ -591,15 +628,42 @@
     <!-- Slick -->
     <script src="./assets/js/slick.min.js"></script>
     <!-- Leaflet -->
-    <script src="./assets/js/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <!-- Openlayer -->
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <script
+        src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList"></script>
     <!-- Script -->
     <script src="./assets/js/script.js"></script>
     <script>
         //   Map
-        var map = L.map("map", {
-            center: [13.756047, 100.5330784],
-            zoom: 16
+        var latlng = [13.15, 101.75];
+        var map = L.map('map', { fadeAnimation: false, scrollWheelZoom: false, zoomControl: false, grayscale: true }).setView(latlng, 3);
+        var greenIcon = L.icon({
+            iconUrl: './assets/images/icons/flag.svg',
+
+            iconSize: [28, 35], // size of the icon
+            iconAnchor: [0, 35], // point of the icon which will correspond to marker's location
+            popupAnchor: [14, -25] // point from which the popup should open relative to the iconAnchor
         });
+        var planes = [
+            ["Thailand", 13.15, 101.75],
+            ["China", 34.4562187, 86.0844976],
+            ["Algeria", 27.8198502, -7.3440852],
+            ["United States", 37.2756762, -104.6558123],
+            ["Alaska", 60.1531092, -176.4550412],
+            ["Zambia", -13.1252706, 25.6104096],
+            ["Christmas Island", -10.4912706, 105.5881077],
+            ["Ogasawara", 24.027767, 140.5351825],
+            ["Davao City", 7.2536838, 125.310988]
+        ];
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        for (var i = 0; i < planes.length; i++) {
+            marker = new L.marker([planes[i][1], planes[i][2]], { icon: greenIcon })
+                .bindPopup(planes[i][0])
+                .addTo(map);
+        }
     </script>
 </body>
 
