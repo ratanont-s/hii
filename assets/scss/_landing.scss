@@ -1,23 +1,27 @@
 #landingPage {
+
   // Sec 1
   #sec1 {
     position: relative;
     z-index: 2;
+
     .sec {
       &-bg {
         img {
           width: 100%;
         }
       }
+
       &-overlay {
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        padding-top: 10%;
+        padding-top: 120px;
       }
     }
+
     .container {
       position: relative;
     }
@@ -35,12 +39,10 @@
       z-index: $zindex-sticky - 1;
       box-shadow: $box-shadow;
       @include font-db-(400);
-      @include gradient-x(
-        $start-color: $secondary,
+      @include gradient-x($start-color: $secondary,
         $end-color: $primary,
         $start-percent: 0%,
-        $end-percent: 100%
-      );
+        $end-percent: 100%);
 
       &-inner {
         width: 240px;
@@ -142,17 +144,32 @@
       }
     }
 
+    // Desktop
+    @include media-breakpoint-up(xl) {
+      .sec-bg {
+        img {
+          width: 100%;
+          height: 680px;
+          object-fit: cover;
+          object-position: center bottom;
+        }
+      }
+    }
+
     // Mobile
     @include media-breakpoint-down(md) {
       background: url("../images/bg3-md.png") no-repeat center top;
       background-size: 100% auto;
+
       .sec-bg {
         display: none;
       }
+
       .sec-overlay {
         position: static;
         padding-top: 0;
       }
+
       .weather {
         position: static;
         margin: auto;
@@ -193,7 +210,7 @@
 
   // Sec 2
   #sec2 {
-    > .container {
+    >.container {
       position: relative;
       padding-top: 116px;
 
@@ -230,12 +247,10 @@
       border-top-left-radius: 2rem;
       border-bottom-right-radius: 2rem;
       z-index: 1;
-      @include gradient-x(
-        $start-color: $secondary,
+      @include gradient-x($start-color: $secondary,
         $end-color: $primary,
         $start-percent: 0%,
-        $end-percent: 100%
-      );
+        $end-percent: 100%);
 
       h1 {
         @include rfs(54);
@@ -336,13 +351,15 @@
     @include media-breakpoint-down(md) {
       overflow-x: hidden;
 
-      > .container {
+      >.container {
         text-align: center;
         padding-top: 30px;
+
         &::before {
           background-position: right top;
           background-size: 50%;
         }
+
         &:after {
           display: none;
         }
@@ -381,30 +398,37 @@
       from {
         top: -100px;
       }
+
       to {
         top: -60px;
       }
     }
+
     @keyframes bgcircle-sm {
       from {
         top: 50px;
       }
+
       to {
         top: 100px;
       }
     }
+
     padding: 50px 0;
     position: relative;
+
     .sec-bg {
       position: absolute;
       left: -150px;
       animation: bgcircle 3s linear infinite alternate;
     }
+
     .title {
       display: block;
       border-bottom: 1px solid $border-color;
       position: relative;
       margin-bottom: 1.5rem;
+
       &::before {
         content: "";
         position: absolute;
@@ -414,6 +438,7 @@
         height: 7px;
         background-color: #40a993;
       }
+
       h1 {
         @include rfs(54);
         line-height: 1;
@@ -425,12 +450,10 @@
         }
 
         span {
-          @include gradient-x(
-            $start-color: $secondary,
+          @include gradient-x($start-color: $secondary,
             $end-color: $primary,
             $start-percent: 0%,
-            $end-percent: 100%
-          );
+            $end-percent: 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -451,7 +474,7 @@
   #sec4 {
     padding: 50px 0;
 
-    > .container-fluid {
+    >.container-fluid {
       padding-right: 0;
     }
 
@@ -513,6 +536,7 @@
   #sec5 {
     .map {
       height: 675px;
+
       &-overlay {
         position: absolute;
         top: 5%;
@@ -521,10 +545,12 @@
         max-width: 300px;
         padding: 15px;
         z-index: 401;
+
         .card {
           border-width: 0;
           border-radius: 0;
           box-shadow: $box-shadow-sm;
+
           &-header {
             padding: 0.5rem;
             background-color: $primary;
@@ -533,6 +559,7 @@
             border-top-left-radius: 0;
             border-top-right-radius: 0;
           }
+
           .list-group {
             &-item {
               padding: 0.5rem;
@@ -656,10 +683,12 @@
         text-align: center;
         padding: 0.5rem 1rem;
         filter: grayscale(1);
+
         img {
           max-width: 100%;
           margin: auto;
         }
+
         @include hover {
           filter: grayscale(0);
         }

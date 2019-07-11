@@ -15,31 +15,31 @@
 
 <body>
     <!-- Header -->
-    <header class="header-landing" id="headerLanding">
-        <div class="header-landing-top">
+    <header class="header" id="header-landing">
+        <div class="header-top">
             <div class="container">
                 <ul class="nav">
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span><img src="./assets/images/icons/icon_purchase.svg" alt=""></span>
                             จัดซื้อจัดจ้าง
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-question-circle"></i>
+                            <span><img src="./assets/images/icons/icon_faq.svg" alt=""></span>
                             ถาม-ตอบ
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-briefcase"></i>
+                            <span><img src="./assets/images/icons/icon_career.svg" alt=""></span>
                             ร่วมงานกับเรา
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-headset"></i>
+                            <span><img src="./assets/images/icons/icon_contact.svg" alt=""></span>
                             ติดต่อหน่วยงาน
                         </a>
                     </li>
@@ -57,9 +57,9 @@
                 </ul>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-xl">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="./assets/images/logo.png" alt="สถาบันสารสนเทศทรัพยากรน้ำ (สสน.)" class="logo">
                     <img src="./assets/images/logo-small.png" alt="สถาบันสารสนเทศทรัพยากรน้ำ (สสน.)" class="logo-small">
                 </a>
@@ -73,7 +73,7 @@
                     </button>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">หน้าแรก</span></a>
+                            <a class="nav-link" href="index.html">หน้าแรก</span></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -97,8 +97,19 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">ข่าวประชาสัมพันธ์</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">งานวิจัยและพัฒนา</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                งานวิจัยและพัฒนา
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"
+                                    href="research-development.html">คลังข้อมูลน้ำและภูมิอากาศแห่งชาติ
+                                    เทคโนโลยีสำรวจและตรวจวัด</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -112,13 +123,26 @@
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
-                        <li class="nav-item d-lg-none">
+                        <li class="nav-item nav-item-more">
+                            <a class="nav-link" href="#">จัดซื้อจัดจ้าง</a>
+                        </li>
+                        <li class="nav-item nav-item-more">
+                            <a class="nav-link" href="#">ถาม-ตอบ</a>
+                        </li>
+                        <li class="nav-item nav-item-more">
+                            <a class="nav-link" href="#">ร่วมงานกับเรา</a>
+                        </li>
+                        <li class="nav-item nav-item-more">
+                            <a class="nav-link" href="#">ติดต่อหน่วยงาน</a>
+                        </li>
+                        <li class="nav-item nav-item-form">
                             <form action="#" class="form">
                                 <div class="input-group input-group-sm">
                                     <input type="text" class="form-control">
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-light" type="button"><i
-                                                class="fas fa-search"></i></button>
+                                        <button class="btn" type="button">
+                                            <i class="fas fa-search"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -603,7 +627,8 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                Copyright © 2019 Hydro Informatics Institute, All rights reserved. | Sitemap
+                Copyright © 2019 <a href="#">Hydro Informatics Institute</a>, All rights reserved. | <a
+                    href="#">Sitemap</a>
             </div>
         </div>
     </footer>
@@ -612,13 +637,13 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
+    </script>
     <!-- Offcanvas -->
     <script src="./assets/js/offcanvas.js"></script>
     <!-- Sticky -->
@@ -631,14 +656,19 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
     <!-- Openlayer -->
     <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-    <script
-        src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList">
+    </script>
     <!-- Script -->
     <script src="./assets/js/script.js"></script>
     <script>
         //   Map
         var latlng = [13.15, 101.75];
-        var map = L.map('map', { fadeAnimation: false, scrollWheelZoom: false, zoomControl: false, grayscale: true }).setView(latlng, 3);
+        var map = L.map('map', {
+            fadeAnimation: false,
+            scrollWheelZoom: false,
+            zoomControl: false,
+            grayscale: true
+        }).setView(latlng, 3);
         var greenIcon = L.icon({
             iconUrl: './assets/images/icons/flag.svg',
 
@@ -660,7 +690,9 @@
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
         for (var i = 0; i < planes.length; i++) {
-            marker = new L.marker([planes[i][1], planes[i][2]], { icon: greenIcon })
+            marker = new L.marker([planes[i][1], planes[i][2]], {
+                    icon: greenIcon
+                })
                 .bindPopup(planes[i][0])
                 .addTo(map);
         }

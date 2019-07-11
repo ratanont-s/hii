@@ -1,11 +1,11 @@
-$(function() {
+$(function () {
   // Header
-  $("header.header-landing").sticky({
+  $("#header-landing").sticky({
     topSpacing: 0
   });
-  if (window.innerWidth < 992) {
-    $("header").unstick();
-    $("header").addClass("sticky-top");
+  if (window.innerWidth < 1200) {
+    $("#header-landing").unstick();
+    $("#header-landing").addClass("sticky-top");
   }
   // Sec 1 slide
   $("#sec1 .slick").slick({
@@ -24,19 +24,15 @@ $(function() {
     slidesToShow: 3,
     centerMode: true,
     centerPadding: "0px",
-    prevArrow:
-      "<a href='#'><img src='../assets/images/icons/prev-arrow.png' /></a>",
-    nextArrow:
-      "<a href='#'><img src='../assets/images/icons/next-arrow.png' /></a>",
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 1,
-          arrows: false
-        }
+    prevArrow: "<a href='#'><img src='../assets/images/icons/prev-arrow.png' /></a>",
+    nextArrow: "<a href='#'><img src='../assets/images/icons/next-arrow.png' /></a>",
+    responsive: [{
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 1,
+        arrows: false
       }
-    ]
+    }]
   });
   // Sec 4 slide
   $("#sec4 .slick").slick({
@@ -47,14 +43,12 @@ $(function() {
     speed: 1000,
     pauseOnHover: false,
     appendDots: $("#sec4 #slickDots"),
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          dots: false
-        }
+    responsive: [{
+      breakpoint: 992,
+      settings: {
+        dots: false
       }
-    ]
+    }]
   });
   //   Sec 7 slide
   $("#sec7 .slick").slick({
@@ -66,14 +60,17 @@ $(function() {
     autoplay: true,
     autoplaySpeed: 10000,
     pauseOnHover: false,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
+    responsive: [{
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
       }
-    ]
+    }]
   });
+
+  $('.close').click(function () {
+    $('iframe').attr('src', $('iframe').attr('src'));
+  });
+
 });

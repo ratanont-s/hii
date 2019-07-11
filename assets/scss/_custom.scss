@@ -1,0 +1,34 @@
+@keyframes sonarWave {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.modal-video {
+    .modal {
+        &-content {
+            border-width: 0;
+            background-color: transparent;
+        }
+
+        &-header {
+            border-bottom-width: 0;
+
+            .close {
+                color: white;
+                padding-right: 0;
+                padding-bottom: 0.5rem;
+                font-size: 2rem;
+            }
+        }
+
+        &-body {
+            padding: 0;
+        }
+    }
+}

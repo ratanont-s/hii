@@ -1,71 +1,279 @@
-#reseachDeverlopment {
-  #sec2 {
-    .sec {
-      &-item {
-        position: relative;
-        background-color: $light;
-        &-green {
-          &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background-color: $secondary;
-          }
-          .col-left {
-            padding-top: 2.5rem;
-            padding-bottom: 2.5rem;
-          }
+.page {
+  &-header {
+    position: relative;
+    @include font-db-(400);
+    z-index: 1;
+    overflow: hidden;
+    overflow-x: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 36px;
+      z-index: 2;
+      @include gradient-x($start-color: $secondary,
+        $end-color: $primary,
+        $start-percent: 0%,
+        $end-percent: 100%);
+    }
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    @keyframes circle-fg {
+      from {
+        top: -60px;
+      }
+
+      to {
+        top: -20px;
+      }
+    }
+
+    &-fg {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      width: 45%;
+      z-index: 1;
+      animation: circle-fg 2s ease-in-out infinite alternate;
+    }
+
+    &-overlay {
+      padding: 82px 0 48px;
+    }
+
+    &-breadcrumb {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+
+      li {
+        &::after {
+          content: '/';
+          padding: 0 .5rem;
         }
-        &-blue {
-          &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            background-color: $primary;
-          }
-          .col-right {
-            padding-top: 2.5rem;
-            padding-bottom: 2.5rem;
+
+        a {
+          color: $body-color;
+          display: inline-block;
+          padding: .25rem 0;
+          @include rfs(20);
+
+          &:hover {
+            color: $primary;
           }
         }
       }
     }
-    h1 {
-      @include rfs(54);
+
+    &-title {
+      @include rfs(50);
+      font-weight: 400;
+      margin-bottom: 287px;
     }
-    p {
-      @include rfs(28);
+
+    &-bottom {
+      .video {
+        display: flex;
+        align-items: center;
+
+        &-wrapper {
+          position: relative;
+          z-index: 0;
+          display: inline-block;
+          margin-right: 1rem;
+        }
+
+        &-emitter {
+          display: inline-block;
+          position: relative;
+          margin: 0 auto;
+          width: 80px;
+          height: 80px;
+          background: url("../images/icons/icon-play.png") no-repeat center center;
+          background-size: contain;
+          border-radius: 10rem;
+          @include transition($transition-base);
+
+          &:hover {
+            box-shadow: $box-shadow;
+            transform: scale(1.1);
+            @include transition($transition-base);
+          }
+        }
+
+        &-wave {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 10rem;
+          background-color: $primary;
+          opacity: 0;
+          z-index: -1;
+          pointer-events: none;
+          animation: sonarWave 2s linear infinite;
+        }
+
+        &-text {
+          h2 {
+            @include rfs(38);
+            line-height: 1;
+
+            span {
+              display: block;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+
     }
 
     // Mobile
     @include media-breakpoint-down(md) {
-      .sec-item {
+
+      &::before {
+        display: none;
+      }
+
+      &-bg {
+        position: static;
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 150%;
+        }
+      }
+
+      &-fg {
+        width: 50%;
+        height: 100%;
+
+        img {
+          height: 80%;
+        }
+      }
+
+      &-overlay {
+        padding: 0;
+        padding-bottom: 1.5rem;
         text-align: center;
-        &-green::before,
-        &-blue::before {
-          display: none;
+      }
+
+      &-breadcrumb {
+        margin-bottom: 0;
+        justify-content: center;
+      }
+
+      &-title {
+        margin-bottom: 0;
+      }
+
+      &-bottom {
+        display: none;
+      }
+    }
+  }
+}
+
+.rd {
+  &-item {
+    position: relative;
+    background-color: $light;
+
+    &-green {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-color: $secondary;
+      }
+
+      .col-left {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+      }
+    }
+
+    &-blue {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: $primary;
+      }
+
+      .col-right {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+      }
+    }
+  }
+
+  // desktop
+  @include media-breakpoint-up(xl) {
+    &-item {
+      &-green {
+        .col-left {
+          padding-right: 100px;
         }
-        &-green {
-          .col-right {
-            padding: 0;
-          }
+      }
+
+      &-blue {
+        .col-right {
+          padding-left: 100px;
         }
-        &-blue {
-          .col-left {
-            padding: 0;
-          }
+      }
+    }
+  }
+
+  // Mobile
+  @include media-breakpoint-down(md) {
+    &-item {
+      text-align: center;
+
+      >.container {
+        max-width: 100%;
+      }
+
+      &-green::before,
+      &-blue::before {
+        display: none;
+      }
+
+      &-green {
+        .col-right {
+          padding: 0;
         }
-        h1 {
-          font-size: 2rem;
-        }
-        p {
-          font-size: 1rem;
+      }
+
+      &-blue {
+        .col-left {
+          padding: 0;
         }
       }
     }
