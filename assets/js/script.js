@@ -25,9 +25,9 @@ $(function() {
     centerMode: true,
     centerPadding: "0px",
     prevArrow:
-      "<a href='#'><img src='../assets/images/icons/prev-arrow.png' /></a>",
+      "<a href='#'><img src='./assets/images/icons/prev-arrow.png' /></a>",
     nextArrow:
-      "<a href='#'><img src='../assets/images/icons/next-arrow.png' /></a>",
+      "<a href='#'><img src='./assets/images/icons/next-arrow.png' /></a>",
     responsive: [
       {
         breakpoint: 992,
