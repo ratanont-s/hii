@@ -578,6 +578,7 @@
 
   // Sec 5
   #sec5 {
+    position: relative;
     .map {
       height: 675px;
 
@@ -620,7 +621,10 @@
     // Mobile
     @include media-breakpoint-down(md) {
       .map {
-        height: 70vh;
+        height: 80vh;
+        &-overlay {
+          top: 1rem;
+        }
       }
     }
   }
