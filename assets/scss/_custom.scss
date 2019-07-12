@@ -118,3 +118,14 @@
     }
   }
 }
+
+.btn-see-all {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-color: $border-color;
+  @include hover-focus {
+    background-color: $primary;
+    border-color: $primary;
+    color: white;
+  }
+}

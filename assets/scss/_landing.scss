@@ -288,8 +288,6 @@
     .slick {
       position: relative;
       z-index: 1;
-
-      margin-bottom: 90px;
       display: flex;
       align-items: center;
 
@@ -305,9 +303,9 @@
         }
       }
 
-      &-list {
-        margin: 0 1rem;
-      }
+      // &-list {
+      //   margin: 0 1rem;
+      // }
 
       &-track {
         display: flex;
@@ -354,15 +352,21 @@
       position: relative;
       z-index: 1;
       text-align: center;
+      margin: 45px 0;
     }
 
     //   Desktop
     @include media-breakpoint-up(lg) {
       .slick {
         margin-top: -4rem;
-
+        &-list {
+          padding-top: 90px !important;
+        }
         &-center {
-          width: 480px !important;
+          // width: 480px !important;
+
+          transform: scale(1.4) translateY(-39px);
+          z-index: 2;
         }
       }
     }

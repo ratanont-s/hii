@@ -6,7 +6,7 @@
   .navbar {
     &-toggler {
       border-color: $border-color;
-      border-radius: .25rem;
+      border-radius: 0.25rem;
       color: $text-muted;
     }
 
@@ -19,8 +19,9 @@
         }
 
         &-form {
-          padding: .5rem 1rem;
-
+          .nav-link {
+            font-size: 16px !important;
+          }
           .form {
             &-control {
               background-color: transparent;
@@ -49,9 +50,18 @@
       }
 
       &-link {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
         color: $body-color;
         line-height: 1;
         font-size: 20px;
+        &:hover {
+          color: $primary;
+          &.dropdown-toggle::after {
+            border-top-color: $primary;
+            border-bottom-color: $primary;
+          }
+        }
       }
     }
 
@@ -74,8 +84,8 @@
 
       &-item {
         color: $text-muted;
-        padding-left: .75rem;
-        padding-right: .75rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
         font-size: 18px;
         line-height: 1;
 
@@ -85,7 +95,7 @@
         }
 
         @include hover {
-          color: $body-color;
+          color: $primary;
           background-color: transparent;
         }
       }
@@ -97,19 +107,26 @@
     .navbar {
       .nav {
         &-item {
-
           &:not(:first-child) {
             border-left: 1px solid $border-color;
           }
 
           &-form {
-            display: none;
+            .form {
+              display: none;
+            }
           }
         }
       }
 
       .dropdown {
+        &:hover {
+          .dropdown-menu {
+            display: block;
+          }
+        }
         &-menu {
+          margin-top: -1px;
           box-shadow: $box-shadow-sm;
         }
       }
@@ -128,7 +145,11 @@
           display: none;
         }
       }
-
+      &-toggler {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       .dropdown {
         &.show {
           .dropdown-toggle {
@@ -178,6 +199,7 @@
               background-color: transparent;
               border-color: $light;
               border-right: 0;
+              color: white;
             }
 
             .btn-outline-light {
@@ -191,9 +213,8 @@
           padding: 0.75rem 1rem;
           display: flex;
           align-items: center;
-
           span {
-            margin-right: .25rem;
+            margin-right: 0.25rem;
 
             img {
               height: 1.25rem;
@@ -205,7 +226,7 @@
   }
 
   .navbar {
-    >.container {
+    > .container {
       align-items: flex-start;
     }
 
@@ -232,13 +253,26 @@
         &-more {
           display: none;
         }
+        &-form {
+          display: none;
+        }
       }
 
       &-link {
         line-height: 1;
         color: white;
         @include rfs(26);
-
+        &:hover {
+          color: white;
+          &.dropdown {
+            &-toggle {
+              &::after {
+                border-top-color: white;
+                border-bottom-color: white;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -254,7 +288,6 @@
 
   &.is-sticky {
     .header {
-
       background-color: white;
       box-shadow: $box-shadow-sm;
 
@@ -263,7 +296,7 @@
       }
 
       .navbar {
-        >.container {
+        > .container {
           align-items: center;
         }
 
@@ -281,10 +314,17 @@
           &-link {
             color: $body-color;
             font-size: 20px;
+            &:hover {
+              color: $primary;
+              &.dropdown-toggle::after {
+                border-top-color: $primary;
+                border-bottom-color: $primary;
+              }
+            }
           }
 
           &-item {
-            &:not(:nth-last-child(2)) {
+            &:not(:last-child) {
               border-right: 1px solid $border-color;
             }
 
@@ -294,6 +334,9 @@
               }
             }
 
+            &-form {
+              display: inline-block;
+            }
             &-more {
               display: inline-block;
             }
