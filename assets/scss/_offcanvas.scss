@@ -9,17 +9,20 @@
     overflow-y: auto;
     visibility: hidden;
     background-color: white;
-    transition: visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
-    transition: transform .3s ease-in-out, visibility .3s ease-in-out;
-    transition: transform .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
+    transition: visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out,
+      -webkit-transform 0.3s ease-in-out;
     box-shadow: $box-shadow-sm;
 
     .navbar {
       &-toggler {
         padding: 0 0 1rem;
         border-width: 0;
+        img {
+          height: 1.25rem;
+        }
       }
-
     }
 
     .nav {
@@ -31,7 +34,6 @@
           justify-content: center;
         }
       }
-
     }
 
     &.open {

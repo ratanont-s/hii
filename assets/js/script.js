@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
   // Header
   $("#header-landing").sticky({
     topSpacing: 0
@@ -24,31 +24,37 @@ $(function () {
     slidesToShow: 3,
     centerMode: true,
     centerPadding: "0px",
-    prevArrow: "<a href='#'><img src='../assets/images/icons/prev-arrow.png' /></a>",
-    nextArrow: "<a href='#'><img src='../assets/images/icons/next-arrow.png' /></a>",
-    responsive: [{
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 1,
-        arrows: false
+    prevArrow:
+      "<a href='#'><img src='../assets/images/icons/prev-arrow.png' /></a>",
+    nextArrow:
+      "<a href='#'><img src='../assets/images/icons/next-arrow.png' /></a>",
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          arrows: false
+        }
       }
-    }]
+    ]
   });
   // Sec 4 slide
   $("#sec4 .slick").slick({
     arrows: false,
     dots: true,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 10000,
     speed: 1000,
     pauseOnHover: false,
     appendDots: $("#sec4 #slickDots"),
-    responsive: [{
-      breakpoint: 992,
-      settings: {
-        dots: false
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          dots: false
+        }
       }
-    }]
+    ]
   });
   //   Sec 7 slide
   $("#sec7 .slick").slick({
@@ -60,17 +66,18 @@ $(function () {
     autoplay: true,
     autoplaySpeed: 10000,
     pauseOnHover: false,
-    responsive: [{
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
       }
-    }]
+    ]
   });
 
-  $('.close').click(function () {
-    $('iframe').attr('src', $('iframe').attr('src'));
+  $(".close").click(function() {
+    $("iframe").attr("src", $("iframe").attr("src"));
   });
-
 });
