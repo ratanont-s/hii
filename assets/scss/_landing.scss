@@ -1,4 +1,5 @@
 #landingPage {
+
   // Sec 1
   #sec1 {
     position: relative;
@@ -38,12 +39,10 @@
       z-index: $zindex-sticky - 1;
       box-shadow: $box-shadow;
       @include font-db-(400);
-      @include gradient-x(
-        $start-color: $secondary,
+      @include gradient-x($start-color: $secondary,
         $end-color: $primary,
         $start-percent: 0%,
-        $end-percent: 100%
-      );
+        $end-percent: 100%);
 
       &-inner {
         width: 240px;
@@ -161,6 +160,7 @@
     @include media-breakpoint-only(lg) {
       .sec-overlay {
         padding-top: 2.5rem;
+
         .weather {
           bottom: -150px;
         }
@@ -175,6 +175,7 @@
         left: 0;
         right: 0;
         height: 100%;
+
         img {
           height: 100%;
           width: 100%;
@@ -228,7 +229,7 @@
 
   // Sec 2
   #sec2 {
-    > .container {
+    >.container {
       position: relative;
       padding-top: 116px;
 
@@ -265,12 +266,10 @@
       border-top-left-radius: 2rem;
       border-bottom-right-radius: 2rem;
       z-index: 1;
-      @include gradient-x(
-        $start-color: $secondary,
+      @include gradient-x($start-color: $secondary,
         $end-color: $primary,
         $start-percent: 0%,
-        $end-percent: 100%
-      );
+        $end-percent: 100%);
 
       h1 {
         @include rfs(54);
@@ -359,13 +358,19 @@
     @include media-breakpoint-up(lg) {
       .slick {
         margin-top: -4rem;
+
         &-list {
           padding-top: 90px !important;
         }
+
+        &-item {
+          padding: 30px 33px;
+        }
+
         &-center {
           // width: 480px !important;
 
-          transform: scale(1.4) translateY(-39px);
+          transform: scale(1.4) translateY(-36px);
           z-index: 2;
         }
       }
@@ -375,7 +380,7 @@
     @include media-breakpoint-down(md) {
       overflow-x: hidden;
 
-      > .container {
+      >.container {
         text-align: center;
         padding-top: 30px;
 
@@ -474,12 +479,10 @@
         }
 
         span {
-          @include gradient-x(
-            $start-color: $secondary,
+          @include gradient-x($start-color: $secondary,
             $end-color: $primary,
             $start-percent: 0%,
-            $end-percent: 100%
-          );
+            $end-percent: 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -543,34 +546,42 @@
         text-align: left;
       }
     }
+
     // Desktop
     @include media-breakpoint-up(lg) {
       .slick-item {
         position: relative;
-        > .container {
+
+        >.container {
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
         }
+
         &-overlay {
           max-width: 50%;
         }
+
         &-img {
           max-width: 50%;
           margin-left: auto;
+
           img {
             width: 100%;
           }
         }
       }
     }
+
     // Mobile
     @include media-breakpoint-down(md) {
       .slick-item {
         position: relative;
+
         &-img {
           padding-left: 15px;
+
           img {
             max-width: 100%;
             margin-left: auto;
@@ -583,6 +594,7 @@
   // Sec 5
   #sec5 {
     position: relative;
+
     .map {
       height: 675px;
 
@@ -599,6 +611,7 @@
           border-width: 0;
           border-radius: 0;
           box-shadow: $box-shadow-sm;
+
           .card {
             &-header {
               padding: 0.5rem;
@@ -609,6 +622,7 @@
               border-top-right-radius: 0;
             }
           }
+
           .list-group {
             &-item {
               padding: 0.5rem 0.5rem;
@@ -626,6 +640,7 @@
     @include media-breakpoint-down(md) {
       .map {
         height: 80vh;
+
         &-overlay {
           top: 1rem;
         }

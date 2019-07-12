@@ -38,13 +38,16 @@
     width: auto;
     margin: 0;
     position: 0;
+
     &-wrapper {
       border-radius: 0;
       background-color: $primary;
     }
   }
+
   &-tip {
     border: 1px solid $primary;
+
     &-container {
       margin-top: -2px;
     }
@@ -54,6 +57,7 @@
 .card-popup {
   border-radius: 0;
   border-color: $primary;
+
   .card {
     &-header {
       background-color: $primary;
@@ -65,26 +69,33 @@
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       font-size: 16px;
+
       a {
         color: white;
         padding: 0.25rem 1rem;
         margin-left: auto;
         background-color: rgba(black, 0.25);
+
         i {
           margin-left: 0.25rem;
         }
       }
     }
+
     &-body {
       padding: 0.5rem;
+
       .list-group {
         margin-bottom: 1rem;
+
         &-item {
           color: $body-color;
           padding: 0.5rem 0;
+
           small {
             display: block;
           }
+
           &:hover {
             background-color: transparent;
             color: $primary;
@@ -92,23 +103,28 @@
         }
       }
     }
+
     &-title {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 0.5rem;
+
       &-country {
         display: flex;
         align-items: center;
         @include rfs(24);
+
         span {
           margin-right: 0.5rem;
+
           img {
             height: 1.5rem;
             width: auto !important;
           }
         }
       }
+
       &-number {
         padding: 0.25rem 0.75rem;
         border: 1px solid $border-color;
@@ -120,9 +136,12 @@
 }
 
 .btn-see-all {
+  line-height: 1;
+  font-size: 24px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   border-color: $border-color;
+
   @include hover-focus {
     background-color: $primary;
     border-color: $primary;

@@ -19,28 +19,22 @@
         }
 
         &-form {
-          .nav-link {
-            font-size: 16px !important;
-          }
-          .form {
-            &-control {
-              background-color: transparent;
-              border-width: 0;
+          .dropdown {
+            &-menu {
+              background-color: #ebebeb;
+              padding: .5rem;
 
-              &:focus {
-                box-shadow: none;
+              .form-control {
+                border-width: 0;
               }
-            }
 
-            .input-group {
-              background: #ebebeb;
-
-              &-append {
+              .input-group-append {
                 .btn {
-                  border-width: 0;
+                  border-top-right-radius: .25rem;
+                  border-bottom-right-radius: .25rem;
 
-                  &:focus {
-                    box-shadow: none;
+                  i {
+                    display: none;
                   }
                 }
               }
@@ -55,8 +49,10 @@
         color: $body-color;
         line-height: 1;
         font-size: 20px;
+
         &:hover {
           color: $primary;
+
           &.dropdown-toggle::after {
             border-top-color: $primary;
             border-bottom-color: $primary;
@@ -112,8 +108,16 @@
           }
 
           &-form {
-            .form {
-              display: none;
+            .dropdown {
+              &-toggle {
+                &::after {
+                  display: none;
+                }
+              }
+
+              &-menu {
+                width: 300px;
+              }
             }
           }
         }
@@ -125,6 +129,7 @@
             display: block;
           }
         }
+
         &-menu {
           margin-top: -1px;
           box-shadow: $box-shadow-sm;
@@ -145,11 +150,54 @@
           display: none;
         }
       }
+
       &-toggler {
         display: flex;
         justify-content: center;
         align-items: center;
       }
+
+      .nav {
+        &-item {
+          &-form {
+            .dropdown {
+              &-toggle {
+                display: none;
+              }
+
+              &-menu {
+                margin-top: 1rem;
+                display: block;
+
+                .form-control {
+                  background-color: transparent;
+                }
+
+                .input-group-append {
+                  .btn {
+                    background-color: transparent;
+                    border-width: 0;
+                    color: $body-color;
+
+                    i {
+                      display: block;
+                    }
+
+                    span {
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &-link {
+          padding: .5rem;
+        }
+      }
+
       .dropdown {
         &.show {
           .dropdown-toggle {
@@ -213,6 +261,7 @@
           padding: 0.75rem 1rem;
           display: flex;
           align-items: center;
+
           span {
             margin-right: 0.25rem;
 
@@ -226,7 +275,7 @@
   }
 
   .navbar {
-    > .container {
+    >.container {
       align-items: flex-start;
     }
 
@@ -253,6 +302,7 @@
         &-more {
           display: none;
         }
+
         &-form {
           display: none;
         }
@@ -262,8 +312,10 @@
         line-height: 1;
         color: white;
         @include rfs(26);
+
         &:hover {
           color: white;
+
           &.dropdown {
             &-toggle {
               &::after {
@@ -296,7 +348,7 @@
       }
 
       .navbar {
-        > .container {
+        >.container {
           align-items: center;
         }
 
@@ -314,8 +366,10 @@
           &-link {
             color: $body-color;
             font-size: 20px;
+
             &:hover {
               color: $primary;
+
               &.dropdown-toggle::after {
                 border-top-color: $primary;
                 border-bottom-color: $primary;
@@ -337,6 +391,7 @@
             &-form {
               display: inline-block;
             }
+
             &-more {
               display: inline-block;
             }

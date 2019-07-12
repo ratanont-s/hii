@@ -15,12 +15,10 @@
       width: 100%;
       height: 36px;
       z-index: 2;
-      @include gradient-x(
-        $start-color: $secondary,
+      @include gradient-x($start-color: $secondary,
         $end-color: $primary,
         $start-percent: 0%,
-        $end-percent: 100%
-      );
+        $end-percent: 100%);
     }
 
     &-bg {
@@ -37,21 +35,21 @@
 
     @keyframes circle-fg {
       from {
-        top: -60px;
+        top: -40px;
       }
 
       to {
-        top: -20px;
+        top: 0px;
       }
     }
 
     &-fg {
       position: absolute;
-      top: -40px;
       right: 0;
       width: 45%;
       z-index: 1;
       animation: circle-fg 2s ease-in-out infinite alternate;
+      height: 500px;
     }
 
     &-overlay {
@@ -86,7 +84,7 @@
     &-title {
       @include rfs(50);
       font-weight: 400;
-      margin-bottom: 287px;
+      margin-bottom: 200px;
     }
 
     &-bottom {
@@ -107,8 +105,7 @@
           margin: 0 auto;
           width: 80px;
           height: 80px;
-          background: url("../images/icons/icon-play.png") no-repeat center
-            center;
+          background: url("../images/icons/icon-play.png") no-repeat center center;
           background-size: contain;
           border-radius: 10rem;
           @include transition($transition-base);
@@ -159,6 +156,7 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
+
         img {
           width: 150%;
         }
@@ -257,7 +255,7 @@
     &-item {
       text-align: center;
 
-      > .container {
+      >.container {
         max-width: 100%;
       }
 
